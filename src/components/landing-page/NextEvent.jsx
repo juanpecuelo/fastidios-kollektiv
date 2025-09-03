@@ -29,6 +29,11 @@ const nextEvent = {
 };
 export const NextEvent = () => {
   const theme = useTheme();
+
+  const handleOpenMaps = ({ location }) => {
+    const url = `http://maps.apple.com/?q=${location}`;
+    window.open(url, "_blank");
+  };
   return (
     <Box sx={{ py: 2 }}>
       <Fade in timeout={1000}>
@@ -81,10 +86,14 @@ export const NextEvent = () => {
                     <Typography variant="h6">{nextEvent.time}</Typography>
                   </Box>
                   <Box
+                    onClick={() =>
+                      handleOpenMaps({ location: nextEvent.location })
+                    }
                     sx={{
                       display: "flex",
                       alignItems: "center",
                       gap: 2,
+                      cursor: "pointer",
                     }}
                   >
                     <LocationOn sx={{ color: theme.palette.primary.main }} />
