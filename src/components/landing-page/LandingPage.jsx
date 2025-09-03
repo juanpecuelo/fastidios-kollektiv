@@ -1,26 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
   Box,
-  Container,
-  Typography,
   IconButton,
-  Fade,
   useTheme,
   useMediaQuery,
   alpha,
   Zoom,
 } from "@mui/material";
-import {
-  VolumeUp,
-  VolumeOff,
-  NearMe,
-  KeyboardArrowDown,
-} from "@mui/icons-material";
+import { VolumeUp, VolumeOff, KeyboardArrowDown } from "@mui/icons-material";
 
 import video from "../../assets/video.mp4";
-import { FASTIDIOS_NAME } from "../../constants";
-import { NextEvent } from "./NextEvent";
+
 import { Welcoming } from "./Welcoming";
+import { NextEvent } from "./NextEvent";
 
 const LandingPage = () => {
   const theme = useTheme();
@@ -30,8 +22,6 @@ const LandingPage = () => {
   const [scrolled, setScrolled] = useState(false);
   const heroRef = useRef(null);
   const videoRef = useRef(null);
-
-  // Próximo evento data (esto vendría de props o API)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,8 +48,10 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <Box sx={{ bgcolor: "background.default", minHeight: "100vh" }}>
-      {/* Hero Section with Video Background */}
+    <Box
+      id="#landing"
+      sx={{ bgcolor: "background.default", minHeight: "100vh" }}
+    >
       <Box
         ref={heroRef}
         sx={{
@@ -71,7 +63,6 @@ const LandingPage = () => {
           justifyContent: "center",
         }}
       >
-        {/* Video Background */}
         <Box
           sx={{
             position: "absolute",
@@ -107,7 +98,6 @@ const LandingPage = () => {
           </video>
         </Box>
 
-        {/* Sound Toggle */}
         <IconButton
           onClick={() => setMuted(!muted)}
           sx={{
@@ -125,15 +115,29 @@ const LandingPage = () => {
           {muted ? <VolumeOff /> : <VolumeUp />}
         </IconButton>
 
-        {/* Hero Content */}
-        <Container
+        <Box
           sx={{
+            width: "100%",
+            height: "100vh",
             zIndex: 2,
             display: "flex",
             flexDirection: "column",
           }}
         >
-          <Welcoming mousePosition={mousePosition} />
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              zIndex: 2,
+              alignItems: "center",
+              flex: 1,
+              width: "100%",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <Welcoming mousePosition={mousePosition} />
+            <NextEvent />
+          </Box>
           <Zoom in timeout={2500}>
             <IconButton
               sx={{
@@ -142,14 +146,20 @@ const LandingPage = () => {
                   "0%, 100%": { transform: "translateY(0)" },
                   "50%": { transform: "translateY(10px)" },
                 },
+                marginBottom: "2px",
               }}
+              onClick={() =>
+                document
+                  .getElementById("about")
+                  .scrollIntoView({ behavior: "smooth" })
+              }
             >
               <KeyboardArrowDown
                 sx={{ fontSize: 40, color: theme.palette.primary.main }}
               />
             </IconButton>
           </Zoom>
-        </Container>
+        </Box>
       </Box>
     </Box>
   );

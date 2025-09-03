@@ -3,9 +3,8 @@ import {
   Box,
   Button,
   Chip,
-  Container,
+  Fade,
   Grid,
-  Slide,
   Stack,
   Typography,
   useTheme,
@@ -20,22 +19,21 @@ import {
 } from "@mui/icons-material";
 
 const nextEvent = {
-  title: "ACID DREAMS",
-  date: "15 SEPTEMBER 2025",
-  time: "23:00 - 06:00",
-  location: "Disco Zwei, Mannheim",
-  artists: ["KLAUDIA GAWLAS", "PAPPENHEIMER", "LOCAL RESISTANCE"],
-  banner: "/api/placeholder/1200/600",
+  title: "Hueleteka 004",
+  date: "14 DECEMBER 2024",
+  time: "22:00 - 06:00",
+  location: "Käthe-Kollwitz-Straße 2-4, Mannheim",
+  artists: ["Artist #1", "Artist #2", "Artist #3"],
   ticketsLink: "#",
-  price: "15€ - 25€",
+  price: "8€",
 };
 export const NextEvent = () => {
   const theme = useTheme();
   return (
-    <Container maxWidth="xl" sx={{ py: 10 }}>
-      <Slide in direction="up" timeout={1000}>
+    <Box sx={{ py: 2 }}>
+      <Fade in timeout={1000}>
         <Box>
-          <Grid container spacing={4} alignItems="stretch">
+          <Grid spacing={4}>
             <Grid xs={12} lg={7}>
               <NextEventCountdownTimer />
             </Grid>
@@ -148,7 +146,7 @@ export const NextEvent = () => {
             </Grid>
           </Grid>
         </Box>
-      </Slide>
-    </Container>
+      </Fade>
+    </Box>
   );
 };

@@ -15,7 +15,10 @@ import React from "react";
 export const AboutPage = () => {
   const theme = useTheme();
   return (
-    <Box sx={{ py: 10, bgcolor: alpha(theme.palette.primary.main, 0.05) }}>
+    <Box
+      id="about"
+      sx={{ py: 10, bgcolor: alpha(theme.palette.primary.main, 0.05) }}
+    >
       <Container maxWidth="lg">
         <Grid container spacing={6} alignItems="center">
           <Grid item xs={12} md={6}>

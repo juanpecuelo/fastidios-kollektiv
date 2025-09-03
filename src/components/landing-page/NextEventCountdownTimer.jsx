@@ -30,7 +30,7 @@ export const NextEventCountdownTimer = () => {
         Event
       </Typography>
 
-      <Box sx={{ display: "flex", justifyContent: "center", mb: 6 }}>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
         <CountdownTimer />
       </Box>
     </Box>
