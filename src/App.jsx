@@ -7,7 +7,7 @@ import { PastEventsPage } from "./components/past-events-page/PastEventsPage";
 function App() {
   return (
     <>
-      <LandingPage />;
+      <LandingPage />
       <AboutPage />
       <PastEventsPage />
       <NewsletterPage />
