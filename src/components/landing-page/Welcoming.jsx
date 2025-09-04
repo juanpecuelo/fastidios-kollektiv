@@ -17,7 +17,7 @@ export const Welcoming = ({ mousePosition, isMobile }) => {
         transition: "transform 0.1s ease-out",
       }}
     >
-      <Fade in timeout={1000}>
+      {/* <Fade in timeout={1000}>
         <Typography
           variant="h5"
           textTransform={"uppercase"}
@@ -33,7 +33,7 @@ export const Welcoming = ({ mousePosition, isMobile }) => {
         >
           {FASTIDIOS_NAME}
         </Typography>
-      </Fade>
+      </Fade> */}
 
       <Fade in timeout={1500}>
         <Typography
@@ -45,11 +45,6 @@ export const Welcoming = ({ mousePosition, isMobile }) => {
             mb: 2,
             textTransform: "uppercase",
             letterSpacing: "-0.02em",
-            textShadow: isMobile
-              ? null
-              : `${mousePosition.x * 10}px ${
-                  mousePosition.y * 15
-                }px 3px rgba(0,0,0)`,
 
             "& span": {
               display: "inline-block",
@@ -70,8 +65,34 @@ export const Welcoming = ({ mousePosition, isMobile }) => {
             },
           }}
         >
-          <span>UNDERGROUND</span> <br />
-          <span>TECHNO</span>
+          <span
+            style={{
+              color: `${theme.palette.primary.main}`,
+              filter: isMobile
+                ? "none"
+                : `drop-shadow(${mousePosition.x * 10}px ${
+                    mousePosition.y * 15
+                  }px 3px rgba(0,0,0))`,
+            }}
+          >
+            LOS FASTIDIOS
+          </span>{" "}
+          <br />
+          <span
+            style={{
+              backgroundImage: `linear-gradient(to right, ${theme.palette.secondary.main} 10%, ${theme.palette.warning.main} 80%)`,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              filter: isMobile
+                ? "none"
+                : `drop-shadow(${mousePosition.x * 10}px ${
+                    mousePosition.y * 15
+                  }px 3px rgba(0,0,0))`,
+            }}
+          >
+            KOLLEKTIV
+          </span>
         </Typography>
       </Fade>
 
