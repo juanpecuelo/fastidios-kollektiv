@@ -224,6 +224,15 @@ const theme = createTheme({
       leavingScreen: 195,
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0, // Móviles muy pequeños
+      sm: 400, // Móviles normales
+      md: 600, // Móviles grandes
+      lg: 960, // Tablets
+      xl: 1280, // Desktop
+    },
+  },
   components: {
     MuiButton: {
       styleOverrides: {

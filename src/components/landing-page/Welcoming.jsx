@@ -4,10 +4,15 @@ import { FASTIDIOS_NAME } from "../../constants";
 export const Welcoming = ({ mousePosition, isMobile }) => {
   const theme = useTheme();
 
+  //TODO este dropshadow hay que ponerlo mejor
+  const dropShadow = `drop-shadow(${isMobile ? -7 : mousePosition.x * 10}px ${
+    isMobile ? 5 : mousePosition.y * 15
+  }px ${isMobile ? 2 : 3}px rgba(0,0,0))`;
+
   return (
     <Box
       maxWidth="lg"
-      padding={{ xs: "10px" }}
+      marginTop={{ xs: "20px" }}
       sx={{
         position: "relative",
         textAlign: "center",
@@ -17,30 +22,12 @@ export const Welcoming = ({ mousePosition, isMobile }) => {
         transition: "transform 0.1s ease-out",
       }}
     >
-      {/* <Fade in timeout={1000}>
-        <Typography
-          variant="h5"
-          textTransform={"uppercase"}
-          sx={{
-            backgroundImage: `linear-gradient(to right, ${theme.palette.primary.main} 30%,${theme.palette.secondary.main} 80% )`,
-            WebkitBackgroundClip: "text",
-            fontWeight: "900",
-            letterSpacing: "0.3em",
-            WebkitTextFillColor: "transparent",
-            display: "block",
-            mb: 2,
-          }}
-        >
-          {FASTIDIOS_NAME}
-        </Typography>
-      </Fade> */}
-
       <Fade in timeout={1500}>
         <Typography
           variant="h1"
           sx={{
             fontWeight: 900,
-            fontSize: { xs: "2rem", md: "5rem", lg: "5rem" },
+            fontSize: { xs: "2rem", sm: "3rem", md: "5rem", lg: "5rem" },
             lineHeight: 1,
             mb: 2,
             textTransform: "uppercase",
@@ -68,11 +55,7 @@ export const Welcoming = ({ mousePosition, isMobile }) => {
           <span
             style={{
               color: `${theme.palette.primary.main}`,
-              filter: isMobile
-                ? "none"
-                : `drop-shadow(${mousePosition.x * 10}px ${
-                    mousePosition.y * 15
-                  }px 3px rgba(0,0,0))`,
+              filter: dropShadow,
             }}
           >
             LOS FASTIDIOS
@@ -84,11 +67,7 @@ export const Welcoming = ({ mousePosition, isMobile }) => {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-              filter: isMobile
-                ? "none"
-                : `drop-shadow(${mousePosition.x * 10}px ${
-                    mousePosition.y * 15
-                  }px 3px rgba(0,0,0))`,
+              filter: dropShadow,
             }}
           >
             KOLLEKTIV
@@ -101,9 +80,10 @@ export const Welcoming = ({ mousePosition, isMobile }) => {
           variant="h6"
           sx={{
             opacity: 0.8,
-            mb: 4,
+            mb: { xs: 2, md: 4 },
             fontWeight: 300,
             letterSpacing: "0.1em",
+            fontSize: { xs: "1rem", sm: "1.5rem" },
           }}
         >
           Art and underground rave collective
