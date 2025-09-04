@@ -10,6 +10,7 @@ export const NextEventCountdownTimer = () => {
         flexDirection: "row",
         justifyContent: "center",
         mb: 2,
+        alignItems: "center",
       }}
     >
       <Typography

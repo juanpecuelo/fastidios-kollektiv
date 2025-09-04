@@ -35,7 +35,7 @@ export const CountdownTimer = () => {
   }, []);
 
   return (
-    <Stack direction="row" spacing={2} sx={{ mt: 3 }}>
+    <Stack direction="row" spacing={2} >
       {Object.entries(timeLeft).map(([unit, value]) => (
         <Box key={unit} sx={{ textAlign: "center" }}>
           <Typography

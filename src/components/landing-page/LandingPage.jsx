@@ -6,6 +6,7 @@ import {
   useMediaQuery,
   alpha,
   Zoom,
+  Stack,
 } from "@mui/material";
 import { VolumeUp, VolumeOff, KeyboardArrowDown } from "@mui/icons-material";
 
@@ -124,10 +125,9 @@ const LandingPage = () => {
             flexDirection: "column",
           }}
         >
-          <Box
+          <Stack
+            direction={{ xs: "column", md: "row" }}
             sx={{
-              display: "flex",
-              flexDirection: "row",
               zIndex: 2,
               alignItems: "center",
               flex: 1,
@@ -135,9 +135,12 @@ const LandingPage = () => {
               justifyContent: "space-evenly",
             }}
           >
-            <Welcoming mousePosition={mousePosition} />
+            <Welcoming
+              mousePosition={mousePosition ?? null}
+              isMobile={isMobile}
+            />
             <NextEvent />
-          </Box>
+          </Stack>
           <Zoom in timeout={2500}>
             <IconButton
               sx={{
