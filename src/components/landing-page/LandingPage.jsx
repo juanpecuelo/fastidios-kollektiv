@@ -144,27 +144,29 @@ const LandingPage = () => {
             />
             <NextEvent />
           </Stack>
-          <Zoom in timeout={2500}>
-            <IconButton
-              sx={{
-                animation: "bounce 2s infinite",
-                "@keyframes bounce": {
-                  "0%, 100%": { transform: "translateY(0)" },
-                  "50%": { transform: "translateY(10px)" },
-                },
-                marginBottom: "2px",
-              }}
-              onClick={() =>
-                document
-                  .getElementById("about")
-                  .scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              <KeyboardArrowDown
-                sx={{ fontSize: 40, color: theme.palette.primary.main }}
-              />
-            </IconButton>
-          </Zoom>
+          {!isMobile && (
+            <Zoom in timeout={2500}>
+              <IconButton
+                sx={{
+                  animation: "bounce 2s infinite",
+                  "@keyframes bounce": {
+                    "0%, 100%": { transform: "translateY(0)" },
+                    "50%": { transform: "translateY(10px)" },
+                  },
+                  marginBottom: "2px",
+                }}
+                onClick={() =>
+                  document
+                    .getElementById("about")
+                    .scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                <KeyboardArrowDown
+                  sx={{ fontSize: 40, color: theme.palette.primary.main }}
+                />
+              </IconButton>
+            </Zoom>
+          )}
         </Box>
       </Box>
     </Box>

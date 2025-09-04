@@ -15,6 +15,11 @@ export const NextEventCountdownTimer = () => {
     >
       <Typography
         variant="h2"
+        fontSize={{
+          xs: theme.typography.h5.fontSize,
+          sm: theme.typography.h4.fontSize,
+          md: theme.typography.h2.fontSize,
+        }}
         sx={{
           textAlign: "center",
           fontWeight: 800,
@@ -24,7 +29,7 @@ export const NextEventCountdownTimer = () => {
           WebkitBackgroundClip: "text",
           color: "transparent",
         }}
-        mr={5}
+        mr={{ xs: 2, md: 5 }}
       >
         Next
         <br />

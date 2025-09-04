@@ -35,11 +35,15 @@ export const CountdownTimer = () => {
   }, []);
 
   return (
-    <Stack direction="row" spacing={2} >
+    <Stack direction="row" spacing={2}>
       {Object.entries(timeLeft).map(([unit, value]) => (
         <Box key={unit} sx={{ textAlign: "center" }}>
           <Typography
             variant="h3"
+            fontSize={{
+              xs: theme.typography.h5.fontSize,
+              sm: theme.typography.h3.fontSize,
+            }}
             sx={{
               fontWeight: 800,
               background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
