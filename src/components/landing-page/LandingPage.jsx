@@ -103,8 +103,8 @@ const LandingPage = () => {
           onClick={() => setMuted(!muted)}
           sx={{
             position: "absolute",
-            top: 20,
-            right: 20,
+            top: { xs: 5, md: 20 },
+            right: { xs: 5, md: 20 },
             zIndex: 10,
             bgcolor: alpha(theme.palette.primary.main, 0.2),
             backdropFilter: "blur(10px)",
@@ -135,6 +135,9 @@ const LandingPage = () => {
               justifyContent: { xs: "center", md: "space-evenly" },
             }}
           >
+            {
+              //TODO estaria interesante que cuando se desmutee el sonido, las letras del welcoming se moviesen mas rápido
+            }
             <Welcoming
               mousePosition={mousePosition ?? null}
               isMobile={isMobile}
