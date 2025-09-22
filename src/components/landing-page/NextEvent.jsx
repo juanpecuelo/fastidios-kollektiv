@@ -39,11 +39,21 @@ export const NextEvent = () => {
       <Fade in timeout={1000}>
         <Box>
           <Grid spacing={4}>
-            <Grid xs={12} lg={7}>
+            <Grid
+              size={{
+                xs: 12,
+                lg: 7,
+              }}
+            >
               <NextEventCountdownTimer />
             </Grid>
 
-            <Grid xs={12} lg={5}>
+            <Grid
+              size={{
+                xs: 12,
+                lg: 5,
+              }}
+            >
               <Box
                 sx={{
                   height: "100%",
@@ -141,7 +151,7 @@ export const NextEvent = () => {
                   size="large"
                   endIcon={<NearMe />}
                   sx={{
-                    py: { xs: 1, sm: 2 },
+                    py: { xs: 1, sm: 1, md: 2 },
                     px: { xs: 2, sm: 4 },
                     fontSize: "1.1rem",
                     fontWeight: 700,
