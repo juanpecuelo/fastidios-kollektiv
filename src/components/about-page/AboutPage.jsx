@@ -25,7 +25,7 @@ export const AboutPage = () => {
     >
       <Container maxWidth="lg">
         <Grid container spacing={6} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Typography
               variant="h3"
               sx={{
@@ -55,10 +55,10 @@ export const AboutPage = () => {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Grid container spacing={2}>
               {mockPastEvents.slice(0, 4).map((event, index) => (
-                <Grid item xs={6} key={event.id}>
+                <Grid size={{ xs: 6 }} key={event.id}>
                   <Fade in timeout={1000 + index * 200}>
                     <Card
                       sx={{

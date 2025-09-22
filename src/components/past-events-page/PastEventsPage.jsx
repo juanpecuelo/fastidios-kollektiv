@@ -31,7 +31,7 @@ export const PastEventsPage = () => {
 
       <Grid container spacing={3}>
         {mockPastEvents.map((event, index) => (
-          <Grid item xs={12} sm={6} md={4} key={event.id}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }} key={event.id}>
             <Zoom in timeout={500 + index * 100}>
               <Card
                 sx={{
