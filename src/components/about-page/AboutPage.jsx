@@ -17,7 +17,11 @@ export const AboutPage = () => {
   return (
     <Box
       id="about"
-      sx={{ py: 10, bgcolor: alpha(theme.palette.primary.main, 0.05) }}
+      sx={{
+        py: 10,
+        bgcolor: alpha(theme.palette.primary.main, 0.05),
+        minHeight: "100vh",
+      }}
     >
       <Container maxWidth="lg">
         <Grid container spacing={6} alignItems="center">
