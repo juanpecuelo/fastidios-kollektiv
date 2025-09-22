@@ -59,6 +59,7 @@ export const NextEvent = () => {
                     mb: 3,
                     textTransform: "uppercase",
                     letterSpacing: "-0.02em",
+                    alignSelf: { xs: "center", sm: "flex-start" },
                   }}
                 >
                   {nextEvent.title}

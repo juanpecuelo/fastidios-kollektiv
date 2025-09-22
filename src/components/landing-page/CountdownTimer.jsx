@@ -56,7 +56,14 @@ export const CountdownTimer = () => {
           </Typography>
           <Typography
             variant="caption"
-            sx={{ opacity: 0.7, textTransform: "uppercase" }}
+            sx={{
+              opacity: 0.7,
+              textTransform: "uppercase",
+              fontSize: {
+                xs: "0.6rem",
+                sm: "0.75rem",
+              },
+            }}
           >
             {unit}
           </Typography>
