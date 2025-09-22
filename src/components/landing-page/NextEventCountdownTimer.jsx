@@ -16,9 +16,9 @@ export const NextEventCountdownTimer = () => {
       <Typography
         variant="h2"
         fontSize={{
-          xs: theme.typography.h5.fontSize,
-          sm: theme.typography.h4.fontSize,
-          md: theme.typography.h2.fontSize,
+          xs: "1.5rem",
+          sm: "2.75rem",
+          // md: "2.75rem",
         }}
         sx={{
           textAlign: "center",
