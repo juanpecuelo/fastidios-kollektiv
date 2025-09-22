@@ -27,12 +27,11 @@ export const Welcoming = ({ mousePosition, isMobile }) => {
           variant="h1"
           sx={{
             fontWeight: 900,
-            fontSize: { xs: "2rem", sm: "3rem", md: "5rem", lg: "5rem" },
+            fontSize: { xs: "3rem", md: "3.5rem", lg: "5rem" },
             lineHeight: 1,
             mb: 2,
             textTransform: "uppercase",
             letterSpacing: "-0.02em",
-
             "& span": {
               display: "inline-block",
               animation: "glitch 2s infinite",
@@ -83,7 +82,7 @@ export const Welcoming = ({ mousePosition, isMobile }) => {
             mb: { xs: 2, md: 4 },
             fontWeight: 300,
             letterSpacing: "0.1em",
-            fontSize: { xs: "1rem", sm: "1.5rem" },
+            fontSize: { xs: "1rem", sm: "1.25rem", lg: "1.5rem" },
           }}
         >
           Art and underground rave collective

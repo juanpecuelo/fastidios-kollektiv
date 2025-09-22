@@ -105,9 +105,6 @@ const theme = createTheme({
       fontSize: "2.25rem",
       fontWeight: 600,
       lineHeight: 1.4,
-      "@media (max-width:600px)": {
-        fontSize: "1.75rem",
-      },
     },
     h4: {
       fontSize: "1.875rem",
@@ -224,15 +221,15 @@ const theme = createTheme({
       leavingScreen: 195,
     },
   },
-  breakpoints: {
-    values: {
-      xs: 0, // Móviles muy pequeños
-      sm: 400, // Móviles normales
-      md: 600, // Móviles grandes
-      lg: 960, // Tablets
-      xl: 1280, // Desktop
-    },
-  },
+  // breakpoints: {
+  //   values: {
+  //     xs: 0, // Móviles muy pequeños
+  //     sm: 400, // Móviles normales
+  //     md: 600, // Móviles grandes
+  //     lg: 960, // Tablets
+  //     xl: 1280, // Desktop
+  //   },
+  // },
   components: {
     MuiButton: {
       styleOverrides: {

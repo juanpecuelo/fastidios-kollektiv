@@ -141,7 +141,7 @@ export const NextEvent = () => {
                   endIcon={<NearMe />}
                   sx={{
                     py: { xs: 1, sm: 2 },
-                    px: { xs: 2, ms: 4 },
+                    px: { xs: 2, sm: 4 },
                     fontSize: "1.1rem",
                     fontWeight: 700,
                     borderRadius: 3,
