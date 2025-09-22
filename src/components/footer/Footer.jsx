@@ -9,9 +9,11 @@ import {
 } from "@mui/material";
 import { FASTIDIOS_NAME } from "../../constants";
 import { Instagram } from "@mui/icons-material";
+import { KollektivTitle } from "../KollektivTitle";
 
 export const Footer = () => {
   const theme = useTheme();
+
   return (
     <Box sx={{ py: 6, bgcolor: "background.paper" }}>
       <Container maxWidth="lg">
@@ -22,19 +24,13 @@ export const Footer = () => {
           spacing={3}
         >
           <Stack direction={"column"} spacing={1}>
-            <Typography
+            <KollektivTitle
               variant="h6"
               sx={{
                 fontWeight: 900,
                 letterSpacing: "0.1em",
-                background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                color: "transparent",
               }}
-            >
-              {FASTIDIOS_NAME}
-            </Typography>
+            />
 
             <Stack direction="row" spacing={2}>
               <IconButton
@@ -42,7 +38,6 @@ export const Footer = () => {
                   bgcolor: alpha(theme.palette.primary.main, 0.1),
                   "&:hover": {
                     bgcolor: alpha(theme.palette.primary.main, 0.2),
-                    transform: "translateY(-3px)",
                   },
                 }}
               >
@@ -50,9 +45,38 @@ export const Footer = () => {
               </IconButton>
             </Stack>
           </Stack>
-          <Typography variant="body2" sx={{ opacity: 0.6 }}>
-            © 2025 Kollektiv Mannheim. All rights reserved.
-          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 0.5,
+              opacity: 0.6,
+            }}
+          >
+            <Typography variant="body2">Done by</Typography>
+            <a
+              style={{
+                textDecoration: "none",
+                color: theme.palette.warning.light,
+                fontSize: "0.875rem",
+              }}
+              href="https://www.instagram.com/senecalover99?igsh=Znh5YmtrbmpsdGQy&utm_source=qr"
+              target="_blank"
+            >
+              @senecalover99
+            </a>
+            <Typography variant="body2">for</Typography>
+            <KollektivTitle
+              variant="body2"
+              spacing={false}
+              sx={{
+                fontWeight: "bolder",
+                ml: 0.5,
+                mr: 0.5,
+              }}
+            />
+            <Typography variant="body2">with ❤️</Typography>
+          </Box>
         </Stack>
       </Container>
     </Box>

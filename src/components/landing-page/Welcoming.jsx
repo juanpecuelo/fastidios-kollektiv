@@ -1,9 +1,7 @@
-import { Box, Container, Fade, Typography, useTheme } from "@mui/material";
-import { FASTIDIOS_NAME } from "../../constants";
+import { Box, Collapse, Fade, Typography } from "@mui/material";
+import { KollektivTitle } from "../KollektivTitle";
 
 export const Welcoming = ({ mousePosition, isMobile }) => {
-  const theme = useTheme();
-
   //TODO este dropshadow hay que ponerlo mejor
   const dropShadow = `drop-shadow(${isMobile ? -7 : mousePosition.x * 10}px ${
     isMobile ? 5 : mousePosition.y * 15
@@ -22,9 +20,10 @@ export const Welcoming = ({ mousePosition, isMobile }) => {
         transition: "transform 0.1s ease-out",
       }}
     >
-      <Fade in timeout={1500}>
-        <Typography
+      <Collapse in timeout={1500}>
+        <KollektivTitle
           variant="h1"
+          spacing={true}
           sx={{
             fontWeight: 900,
             fontSize: { xs: "2.3rem", sm: "3rem", md: "4rem", lg: "5rem" },
@@ -49,30 +48,10 @@ export const Welcoming = ({ mousePosition, isMobile }) => {
               "60%": { transform: "translateX(-1px)" },
               "80%": { transform: "translateX(1px)" },
             },
+            filter: dropShadow,
           }}
-        >
-          <span
-            style={{
-              color: `${theme.palette.primary.main}`,
-              filter: dropShadow,
-            }}
-          >
-            LOS FASTIDIOS
-          </span>{" "}
-          <br />
-          <span
-            style={{
-              backgroundImage: `linear-gradient(to right, ${theme.palette.secondary.main} 10%, ${theme.palette.warning.main} 80%)`,
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              filter: dropShadow,
-            }}
-          >
-            KOLLEKTIV
-          </span>
-        </Typography>
-      </Fade>
+        />
+      </Collapse>
 
       <Fade in timeout={2000}>
         <Typography
