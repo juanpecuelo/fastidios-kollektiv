@@ -16,9 +16,9 @@ export const Welcoming = ({ mousePosition, isMobile }) => {
       sx={{
         position: "relative",
         textAlign: "center",
-        transform: `translate(${mousePosition.x * 10}px, ${
-          mousePosition.y * 10
-        }px)`,
+        transform: !isMobile
+          ? `translate(${mousePosition.x * 10}px, ${mousePosition.y * 10}px)`
+          : "none",
         transition: "transform 0.1s ease-out",
       }}
     >
@@ -29,7 +29,7 @@ export const Welcoming = ({ mousePosition, isMobile }) => {
             fontWeight: 900,
             fontSize: { xs: "2.3rem", sm: "3rem", md: "3.5rem", lg: "5rem" },
             lineHeight: 1,
-            mb: {xs:1, sm:2},
+            mb: { xs: 1, sm: 2 },
             textTransform: "uppercase",
             letterSpacing: "-0.02em",
             "& span": {
