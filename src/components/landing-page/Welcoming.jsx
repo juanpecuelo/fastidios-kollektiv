@@ -27,7 +27,7 @@ export const Welcoming = ({ mousePosition, isMobile }) => {
           variant="h1"
           sx={{
             fontWeight: 900,
-            fontSize: { xs: "2.3rem", sm: "3rem", md: "3.5rem", lg: "5rem" },
+            fontSize: { xs: "2.3rem", sm: "3rem", md: "4rem", lg: "5rem" },
             lineHeight: 1,
             mb: { xs: 1, sm: 2 },
             textTransform: "uppercase",
